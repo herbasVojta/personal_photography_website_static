@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" id="pageViewport">
+		<title>Galerie</title>
+		<link rel="stylesheet" href="styles-portfolio-gallery.css?id=<?php echo uniqid(); ?>">
+	</head>
+	<body>
+		<header>
+			<ul>
+				<li><a href="index.html" class="grey">DOMOV</a></li>
+				<li><a href="#">GALERIE</a></li>
+				<li><a href="login.html" class="grey">UPRAVIT</a></li>
+			</ul>
+		</header>
+		<div id="content">
+			<div class="column">
+				<div class="nav">
+					<ul>
+						<li><a href="#">PŘÍRODA</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="column">
+				<div class="nav">
+					<ul>
+						<li><a href="portfolio-portrait.html" class="grey">PORTRÉTY</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="column">
+				<div class="nav">
+					<ul>
+						<li><a href="portfolio-street.html" class="grey">MĚSTO</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="navbar.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const columns = document.querySelectorAll(".column");
+            const images = [];
+
+            let count = 13;
+            
+            for (let i = 1; i <= count; i++) {
+                images.push({
+                    src: `images/nature/${i}.jpg`,
+                    rating: Math.floor(Math.random() * 100) + "%",
+                    location: ["Praha", "Brno", "Ostrava", "Plzeň", "Olomouc"][Math.floor(Math.random() * 5)]
+                });
+            }
+
+            images.forEach((image, index) => {
+                const columnIndex = index % 3;
+                const column = columns[columnIndex];
+
+                const imageWrapper = document.createElement("div");
+                imageWrapper.classList.add("image-wrapper");
+                imageWrapper.innerHTML = `
+                    <div class="top">
+                        <img src="images/pinpoint.png" class="pinpoint">
+                        <div class="location">${image.location}</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="like-wrapper">
+                            <button class="like">LÍBÍ</button>
+                        </div>
+                        <div class="rating">${image.rating}</div>
+                        <div class="dislike-wrapper">
+                            <button class="dislike">NELÍBÍ</button>
+                        </div>
+                    </div>
+                    <img class="img" src="${image.src}" alt="Nature Image ${index + 1}">
+                `;
+                
+                column.appendChild(imageWrapper);
+            });
+        });
+        </script>
+	</body>
+</html>

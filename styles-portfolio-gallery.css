@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+*
+
+{ 
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: white;
+}
+
+header {
+	width: 100vw;
+	padding: 40px 0;
+	position: fixed;
+	transition: 0.3s;
+	z-index: 10;
+}
+
+header ul {
+	display: flex;
+	justify-content: center;
+}
+
+header ul li {
+	list-style: none;
+}
+
+header ul li a {
+	margin: 0 20px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.2em;
+	font-weight: 900;
+	color: black;
+	letter-spacing: 1px;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+.grey {
+	color: #adadad;
+}
+
+header a:hover {
+	color: black;
+	transition: 0.2s;
+}
+
+header.sticky {
+	padding: 15px 0;
+	background: black;
+}
+
+header.sticky ul li a {
+	color: white;
+}
+
+header.sticky .grey {
+	color: #adadad;
+}
+
+header.sticky a:hover {
+	color: white;
+	transition: 0.2s;
+}
+
+.nav {
+	padding: 160px 0 0 0;
+	justify-content: center;
+	text-align: center;
+}
+
+.nav li {
+	list-style: none;
+}
+
+.nav .grey {
+	color: #adadad;
+}
+
+.nav a {
+	font-family: 'Encode Sans', sans-serif;
+	color: black; 
+	text-decoration: none;
+	letter-spacing: 5px;
+}
+
+.nav a:hover {
+	color: black;
+	transition: 0.2s;
+}
+
+#content {
+	padding-bottom: 5%;
+	display: flex;
+	justify-content: center;
+}
+
+.column {
+	width: 22%;
+	display: flex;
+	flex-direction: column;
+}
+
+.image-wrapper {
+	margin: 8% 4% 0 4%;
+	position: relative;
+	display: flex;
+	animation-name: appear;
+	animation-duration: 1s;
+}
+
+@keyframes appear {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+.img {
+	width: 100%;
+	border-radius: 0.5vw;
+}		
+
+.image-wrapper:hover > .img {
+	filter: brightness(50%);
+	transition: 0.2s;
+}
+
+.top {
+	padding: 1vw;
+	position: absolute;
+	display: flex;
+	opacity: 0;
+	z-index: 10;
+}
+
+.image-wrapper:hover > .top {
+	opacity: 1;
+	transition: 0.3s;
+}
+
+
+.pinpoint {
+	height: 2vw;
+}
+
+.location {
+	margin: -0.6vw 0 0 0.5vw;
+	font-family: 'Bebas Neue', cursive;
+	font-size: 2.7vw;
+	color: white;
+	pointer-events: none;
+}
+
+.bottom {
+	width: 90%;
+	bottom: 0;
+	margin: 0 0 5% 5%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	opacity: 0;
+	animation-name: bye;
+	animation-duration: 0.2s;
+	transition: 0.2s;
+	z-index: 10;
+}
+
+.image-wrapper:hover > .bottom {
+	opacity: 1;
+	transition: 0.2s;
+}
+
+.like-wrapper {
+	left: 0;
+	bottom: 0;
+	position: absolute;
+}
+
+.like, .dislike {
+	font-family: 'Encode Sans', sans-serif;
+	font-size: 0.9vw;
+	color: white;
+	text-align: center;
+	background-color: transparent;
+	border-style: solid;
+	border-color: white;
+	border-radius: 50vw;
+	border-width: 0.2vw;
+	transition: 0.2s;
+}
+
+.like {
+	padding: 0.3vw 1.3vw;
+}
+
+.like:hover {
+	background-color: #42bd60;
+	border-color: #31a54e;
+	transition: 0.2s;
+}
+
+.dislike-wrapper {
+	right: 0;
+	bottom: 0;
+	position: absolute;
+}
+
+.dislike {
+	padding: 0.3vw 0.7vw;
+}
+
+.dislike:hover {
+	background-color: #aa3d43;
+	border-color: #853035;
+	transition: 0.2s;
+}
+
+.rating {
+	bottom: 0;
+	margin: -2.5%;
+	position: absolute;
+	font-family: 'Bebas Neue', cursive;
+	font-size: 2.2vw;
+	color: white;
+	letter-spacing: 0.05vw;
+	pointer-events: none;
+}
+
+/*animation*/
+@keyframes bye {
+	0% {opacity: 0;}
+	100% {opacity: 0;}
+}
+
+/*screen sizes*/
+@media only screen and (max-width: 1400px) {
+	header {
+		padding: 30px 0px;
+	}
+
+	header ul li a {
+		margin: 0 15px;
+		font-size: 1em;
+	}
+
+	header.sticky {
+		padding: 15px 0;
+	}
+
+	.nav {
+		padding: 100px 0 0 0;
+	}
+
+	.nav ul {
+		padding: 0 2.5vw 0 2.5vw;
+		grid-gap: 2.5vw;
+		grid-auto-rows: 5.5vw;
+	}
+	
+	#content {
+		padding-bottom: 2.5%;
+	}
+	
+	.column {
+		width: 32.5%;
+	}
+	
+	.img {
+		border-radius: 1.2vw;
+	}
+
+	.top {
+		padding: 1.5vw;
+	}
+
+	.pinpoint {
+		height: 3vw;
+	}
+
+	.location {
+		margin: -0.75vw 0 0 0.8vw;
+		font-size: 3.9vw;
+	}
+
+	.like, .dislike {
+		font-size: 1.3vw;
+		border-width: 0.25vw;
+	}
+
+	.like {
+		padding: 0.4vw 1.8vw;
+	}
+
+	.dislike {
+		padding: 0.4vw 1vw;
+	}
+
+	.rating {
+		font-size: 3.8vw;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	header {
+		padding: 20px 0px;
+	}
+
+	header.sticky {
+		padding: 10px 0;
+	}
+
+	header ul li a {
+		margin: 0 10px;
+		font-size: 0.6em;
+	}
+
+	.nav {
+		padding: 80px 0 5px 0;
+	}
+
+	.nav a {
+		font-size: 0.6em;
+	}
+
+	.nav ul {
+		height: 0.6em;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.nav {
+		padding: 60px 0 5px 0;
+	}
+
+	.nav a {
+		font-size: 1.5vw;
+	}
+
+	.nav ul {
+		height: 1.5vw;
+	}
+}

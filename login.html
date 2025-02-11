@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" id="pageViewport">
+		<title>Login</title>
+		<link rel="stylesheet" href="styles-login.css?id=<?php echo uniqid(); ?>">
+	</head>
+	<body>
+		<header>
+			<ul>
+				<li><a href="index.html" class="grey">DOMOV</a></li>
+				<li><a href="portfolio-nature.html" class="grey">GALERIE</a></li>
+				<li><a href="#">UPRAVIT</a></li>
+			</ul>
+		</header>
+		<div id="content">
+			<form onsubmit="return false;">
+				<input type="text" name="jmeno" value="uživatelské jméno"><br>
+				<input type="password" name="heslo" value="heslo"><br>
+				<input type="submit">
+			</form>
+		</div>
+		<script src="navbar.js"></script>
+	</body>
+</html>

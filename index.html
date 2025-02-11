@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" id="pageViewport">
+		<title>Domov</title>
+		<link rel="stylesheet" href="styles.css?id=<?php echo uniqid(); ?>">
+	</head>
+	<body>
+		<header>
+			<ul>
+				<li><a href="#">DOMOV</a></li>
+				<li><a href="portfolio-nature.html" class="grey">GALERIE</a></li>
+				<li><a href="login.html" class="grey">UPRAVIT</a></li>
+			</ul>
+		</header>
+		<div class="content" id="content">
+			<div class="bg">
+				<div class="image">
+					<div class="darken"></div>
+					<div class="name">VOJTĚCH PŘIBYL</div>
+					<div class="caption">Fotograf z Ostravy</div>
+					<div class="buttons-wrapper">
+						<a href="https://www.instagram.com/im.voyta/">INSTAGRAM</a>
+						<a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSHvbGcNtWkvNLWsHWSRMFXFSnBKkBGmVjfjXPfhdWTDZszGxvWPKxWWZzpkdrhMvPSPLlzj">EMAIL</a>
+					</div>
+					<div class="arrow"></div>
+				</div>
+			</div>
+			<div class="contact">
+				<div class="grid">
+					<div class="img"></div>
+					<div class="line" id="a">Vojtěch Přibyl</div>
+					<div class="line">Ostrava</div>
+					<div class="line">Instagram: @im.voyta</div>
+					<div class="line">E-mail: im.voyta@gmail.com</div>
+				</div>
+			</div>
+		</div>
+		<script src="navbar.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$(window).scroll(function(){
+				var scroll = $(window).scrollTop();
+				$('.image').css({
+					filter: "blur(" + (scroll/3000) + "rem)"
+				})
+			})
+			var body = document.getElementById('content');
+			var windowSize = body.offsetHeight;
+			var space = window.innerHeight;
+			$(document).ready(function(){
+				$(window).scroll(function(){
+					$('.image').css("opacity", (windowSize - $(window).scrollTop() - space)/space);
+				})
+			})
+		</script>
+	</body>
+</html>
